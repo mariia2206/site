@@ -1,0 +1,301 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    background-color: #D9D9D9;
+    padding: 10px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+
+  }
+
+  .menu li {
+    display: inline;
+    margin-right: 30px;
+  }
+
+  .menu li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .menu li a:hover {
+    background-color: #252A46;
+    color:white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .search-form {
+    display: flex;
+  }
+
+  .search-form input[type="text"] {
+    padding: 5px;
+    border: 1px solid  black;
+    border-radius: 3px;
+  }
+
+  .search-form button {
+    padding: 5px 10px;
+    background-color: #252A46;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .search-form button:hover {
+    background-color: #252A46;
+  }
+   /* Стили для шапки */
+   .header {
+    background-color: #252A46; /* Синий цвет фона */
+    color: #ffffff; /* Белый цвет текста */
+    padding: 10px 150px; /* Поля вокруг текста */
+    display: flex; /* Располагаем элементы в строку */
+    justify-content: space-between; /* Располагаем элементы по краям */
+    align-items: center; /* Выравниваем элементы по вертикали */
+  }
+  .contact_header{
+    display: flex; /* Располагаем элементы в строку */
+    justify-content:flex-end;
+    align-items: center; /* Выравниваем элементы по вертикали */
+  }
+  .contact_header img{
+    padding: 0px  20px;
+  }
+  .header p {
+    margin: 0; /* Убираем отступы */
+  }
+
+     /* Стили для баннера */
+     .banner {
+      background-color: #252A46; /* Синий цвет фона */
+      color: #ffffff; /* Белый цвет текста */
+      padding: 20px; /* Поля вокруг текста */
+      display: flex; /* Располагаем элементы в строку */
+      align-items: center; /* Выравниваем элементы по вертикали */
+      padding: 50px 150px;
+      padding-bottom: 120px;
+    }
+
+    .text {
+      flex: 1; /* Занимает все доступное пространство по горизонтали */
+    }
+
+    .button {
+      text-decoration: none;
+      background-color: #252A46; /* Белый цвет фона кнопки */
+      color: white; /* Синий цвет текста кнопки */
+      border: 1px solid #D9D9D9; /* Белая обводка кнопки */
+      padding: 20px 50px; /* Поля вокруг текста кнопки */
+      border-radius: 15px; /* Закругленные края кнопки */
+      font-size: 18px; /* Размер текста кнопки */
+      cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+      transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавное изменение цвета фона, текста и анимации выдвижения кнопки */
+}
+
+
+    .button:hover {
+      background-color:#D9D9D9; /* Изменяем цвет фона при наведении */
+      color: black; /* Изменяем цвет текста при наведении */
+      transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+    }
+
+    .image {
+      max-width: 800px; /* Максимальная ширина картинки */
+
+    }
+
+    /* Стили для раздела О нас */
+    .about-section {
+      display: flex; /* Располагаем элементы в строку */
+      align-items: center; /* Выравниваем элементы по вертикали */
+      padding: 50px 150px;
+    }
+
+    .about-image {
+      max-width: 600px; /* Максимальная ширина изображения */
+    }
+    .about-text{
+      text-align: right;
+      padding-left: 200px;
+    }
+    .about{
+      padding-top: 50px;
+      text-align: center;}
+
+      .advantages-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+      }
+      .advantages-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+      }
+      .advantages-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .circle {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: #252A46;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+      }
+      .icon {
+        height: auto;
+        fill: white;
+        width: 40px ;
+      }
+      .photo_preim{
+        width: 500px;
+      }
+      .preim_text{
+        width: 300px;
+      }
+      .icon4{
+        height: auto;
+        fill: white;
+        width:35px;
+      }
+      .preim{
+        padding-top: 50px;
+        text-align: center;}
+        .testimonial-slider {
+          position: relative;
+          width: 500px;
+          margin: 0 auto;
+          overflow: hidden;
+        }
+        .question-form {
+          max-width: 500px;
+          margin: 50px auto;
+          padding: 20px;
+          background-color: #252A46;
+          border-radius: 30px;
+        }
+        .form-header {
+          text-align: center;
+          font-size: 24px;
+          margin: 20px 0px;
+          color: #fff;
+        }
+        .form-group {
+          margin-bottom: 20px;
+          margin-right: 70px;
+          margin-left: 60px;
+        }
+        .form-group label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"]{  width: 100%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
+          height: 20px; /* Высота полей ввода */
+          padding: 10px; /* Отступы внутри поля ввода */
+          background-color: #D9D9D9; /* Цвет фона полей ввода */}
+        .form-group textarea {
+          width: 100%;
+          padding: 10px;
+          background-color: #D9D9D9;
+        }
+        .form-group textarea {
+          resize: vertical;
+        }
+        .form-checkbox {
+          display: flex;
+          align-items: center;
+          color: #D9D9D9;
+        }
+        .form-checkbox input[type="checkbox"] {
+          margin-right: 10px;
+        }
+        .form-submit {
+          text-align: center;
+        }
+        .form-submit button {
+          padding: 12px 40px;
+          margin-bottom: 20px;
+          font-size: 18px;
+          color:white;
+          background-color:#252A46;
+          border: 1px solid #fff;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .form-submit button:hover {
+          background-color:#D9D9D9;
+          color: #000;
+        }
+        .sogl{font-size: 15px;}
+        .zad{font-size: 15px;}
+
+        .footer {
+          background-color: #252A46;
+          color: #ffffff;
+          padding: 60px 150px;
+          display: flex;
+          justify-content: space-between;
+        }
+        .column h3 {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        .column ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .column ul li  {
+          margin-bottom: 15px;
+        }
+        .column li a{
+          color: #fff;
+           text-decoration: none;}
+        .column img{
+          padding-right: 20px;
+        }
+        .button_strelka {
+          text-decoration: none;
+          background-color: #252A46; /* Белый цвет фона кнопки */
+          color: white; /* Синий цвет текста кнопки */
+          border: 1px solid #D9D9D9; /* Белая обводка кнопки */
+          padding: 20px 27px; /* Поля вокруг текста кнопки */
+          border-radius: 60px; /* Закругленные края кнопки */
+          font-size: 18px; /* Размер текста кнопки */
+          cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+          transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавное изменение цвета фона, текста и анимации выдвижения кнопки */
+    }
+
+
+        .button_strelka:hover{
+          background-color:#D9D9D9; /* Изменяем цвет фона при наведении */
+          color: black; /* Изменяем цвет текста при наведении */
+          transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+        }
+        .karta{
+          padding-bottom: 120px ;
+        }

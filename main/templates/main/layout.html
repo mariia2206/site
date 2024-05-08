@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Подключаем стили для иконок -->
 </head>
 <body>
+  <div class="header">
+        <p>Шинсервис Бтск-Дон</p>
+        <div class="contact_header">
+            <img class="icon4" src="{% static 'shinka/img/адрес.png' %}" alt="Адрес">
+        <p>г. Батайск, ул. Октябрьская, 42</p>
+        <img class="icon4" src="{% static 'shinka/img/телефон.png' %}" alt="Телефон">
+        <p>+7 (919) 897-40-08</p></div>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="./glavnaya.html">Главная</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Услуги и акции</a></li>
+      <li><a href="./contacts.html">Контакты</a></li>
+    </ul>
+    <form class="search-form">
+      <input type="text" placeholder="Поиск...">
+      <button type="submit"><i class="fas fa-search"></i></button> <!-- Используем иконку для кнопки поиска -->
+    </form>
+  </nav>
     {% block content %}
     {% endblock %}
 </body>

@@ -7,24 +7,61 @@
 
 {% block content %}
 <body>
-  <div class="header">
-        <p>Шинсервис Бтск-Дон</p>
-        <div class="contact_header">
-            <img class="icon4" src="{% static 'shinka/img/адрес.png' %}" alt="Адрес">
-        <p>г. Батайск, ул. Октябрьская, 42</p>
-        <img class="icon4" src="{% static 'shinka/img/телефон.png' %}" alt="Телефон">
-        <p>+7 (919) 897-40-08</p></div>
+    <div class="banner">
+    <div class="text">
+      <h1>Шиномонтаж на высшем уровне - <br> ваше спокойствие на дороге</h1>
+      <p>Запишитесь на<br> шиномонтаж прямо<br> сейчас!</p>
+      <button class="button">Записаться</button>
+    </div>
+        <img class="image" src="{% static 'shinka/img/колесо.png' %}" alt="Шины">
   </div>
-  <nav>
-    <ul class="menu">
-      <li><a href="./glavnaya.html">Главная</a></li>
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Услуги и акции</a></li>
-      <li><a href="./contacts.html">Контакты</a></li>
+<h1 class="about">О нас</h1>
+  <section class="about-section">
+      <img class="about-image" src="{% static 'shinka/img/о нас главная.jpg' %}" alt="Изображение о нас">
+    <div class="about-text">
+      <p>Мы работаем с 2008 года и знаем толк в своем деле. Наша шиномонтажная предлагает профессиональные услуги по замене и балансировке колес, а также ремонту шин. Мы работаем с опытными специалистами, используем современное оборудование и качественные материалы, чтобы обеспечить безопасность и комфорт на дороге каждому нашему клиенту. Наш приоритет - качественное обслуживание и довольные клиенты, поэтому мы гарантируем выполнение всех работ и индивидуальный подход к каждому автомобилю. Доверьте свои колеса профессионалам и наслаждайтесь комфортной поездкой каждый день!
+      </p>
+    </div>
+  </section>
+<h1 class="preim">Наши преимущества</h1>
+  <section class="advantages-section">
+    <ul class="advantages-list">
+      <li class="advantages-item">
+        <div class="circle">
+                <img class="icon" src="{% static 'shinka/img/specialist.png' %}" alt="Преимущество 1">
+        </div>
+        <p class="preim_text">Опытные специалисты:<br>
+на шиномонтажной работают профессионалы, которые точно знают, как выполнять работу без повреждения шин и дисков</p>
+      </li>
+      <li class="advantages-item">
+        <div class="circle">
+            <img class="icon" src="{% static 'shinka/img/oborudovanie.png' %}" alt="Преимущество 2"></div>
+        <p class="preim_text">Профессиональное оборудование:<br>
+шиномонтажная оборудована всем необходимым для качественной замены и установки шин</p>
+      </li>
+      <li class="advantages-item">
+        <div class="circle"><img class="icon" src="{% static 'shinka/img/scorost.png' %}" alt="Преимущество 3"></div>
+        <p class="preim_text">Быстрое обслуживание: <br>
+на шиномонтажной оперативно выполняют замену шин, что экономит время клиентов</p>
+      </li>
     </ul>
-    <form class="search-form">
-      <input type="text" placeholder="Поиск...">
-      <button type="submit"><i class="fas fa-search"></i></button> <!-- Используем иконку для кнопки поиска -->
-    </form>
-  </nav>
+    <img src="{% static 'shinka/img/преимущества.jpg' %}"  alt="Фото шины" class="photo_preim">
+    <ul class="advantages-list">
+      <li class="advantages-item">
+        <div class="circle"><img class="icon4" src="{% static 'shinka/img/usluga.png' %}" alt="Преимущество 4"></div>
+        <p class="preim_text">Разнообразие услуг:<br>
+помимо замены шин, шиномонтажаня может предложить услуги по ремонту проколов, балансировке колес и прочее</p>
+      </li>
+      <li class="advantages-item">
+        <div class="circle"><img class="icon" src="{% static 'shinka/img/koleso.png' %}" alt="Преимущество 5"></div>
+        <p class="preim_text">Качественные материалы:<br>
+на шиномонтажной используются только качественные шины и расходные материалы</p>
+      </li>
+      <li class="advantages-item">
+        <div class="circle"><img class="icon" src="{% static 'shinka/img/mobil.png' %}" alt="Преимущество 5"></div>
+        <p class="preim_text">Мобильный шиномонтаж:<br>
+если в дороге лопнуло колесо или произошло что-то с шиной, то мы выезжаем к вам!</p>
+      </li>
+    </ul>
+  </section>
 {% endblock %}

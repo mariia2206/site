@@ -33,5 +33,39 @@
   </nav>
     {% block content %}
     {% endblock %}
+<footer class="footer">
+  <div class="column">
+    <p>Меню:</p>
+    <ul>
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Услуги и акции</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="column">
+    <p>Контакты:</p>
+    <ul>
+      <li>+7 (952) 577-39-87</li>
+      <li>+7 (919) 897-40-08</li>
+      <li>Email: shinservice@gmail.com</li>
+    </ul>
+  </div>
+  <div class="column">
+    <p>Мы в соц.сетях:</p>
+      <img class="icon4" src="{% static 'shinka/img/телега.png' %}" alt="Телеграм">
+      <img class="icon4" src="{% static 'shinka/img/вотсап.png' %}" alt="Вотс ап">
+    <p>Авито: ШИНСЕРВИС БТСК-ДОН 761ru</p>
+  </div>
+  <div class="column">
+    <p>Адрес:</p>
+    <p>г. Батайск, ул. Октябрьская, 42</p><br>
+    <a href="#" class="button">Записаться</a>
+  </div>
+</footer>
+
+<!-- Кнопка "Вверх" -->
+<a href="#" class="button_strelka" style="position: fixed; bottom: 20px; right: 20px;">&#8593;</a>
+
 </body>
 </html>

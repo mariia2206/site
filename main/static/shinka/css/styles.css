@@ -127,11 +127,15 @@ body {
     }
 
     .about-image {
-      max-width: 600px; /* Максимальная ширина изображения */
+      width: 600px; /* Максимальная ширина изображения */
     }
     .about-text{
       text-align: right;
       padding-left: 200px;
+    }
+    .about-text1{
+      text-align: left;
+      padding-right: 200px;
     }
     .about{
       padding-top: 50px;
@@ -299,3 +303,76 @@ body {
         .karta{
           padding-bottom: 120px ;
         }
+
+          /* Общий стиль для контейнера */
+    .about-us {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+  }
+
+
+  /* Стиль для блока с текстом и изображением */
+  .info {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+      margin: 0px;
+  }
+
+  /* Стиль для текстового блока */
+  .text {
+      flex: 1;
+      margin-right: 20px;
+  }
+
+
+
+  /* Медиа запрос для адаптивности */
+  @media screen and (max-width: 768px) {
+      .info {
+          flex-direction: column;
+      }
+
+      .text, .image {
+          margin-right: 0;
+          margin-bottom: 20px;
+      }
+  }
+
+
+      /* Стили для блока синего цвета */
+      .blue-block {
+        background-color:#252A46;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin: 50px 0px;
+    }
+
+    /* Стили для квадратов */
+    .square {
+        display: inline-block;
+        align-items: center;
+        width: 280px;
+        height: 270px;
+        background-color:#252A46;
+        border: 2px solid white;
+        border-radius: 20px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    /* Стили для изображений в квадратах */
+    .square img {
+        max-width: 150px;
+        margin-bottom: 5px;
+        padding-top: 50px;
+    }
+
+    /* Стили для текста в квадратах */
+    .square p {
+        color: white;
+    }

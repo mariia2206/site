@@ -21,10 +21,10 @@
   </div>
   <nav>
     <ul class="menu">
-      <li><a href="./glavnaya.html">Главная</a></li>
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Услуги и акции</a></li>
-      <li><a href="./contacts.html">Контакты</a></li>
+      <li><a href="{% url 'index' %}" rel="stylesheet">Главная</a></li>
+      <li><a href="{% url 'about' %}" rel="stylesheet">О нас</a></li>
+      <li><a href="{% url 'uslugi' %}" rel="stylesheet">Услуги и акции</a></li>
+      <li><a href="{% url 'contacts' %}" rel="stylesheet">Контакты</a></li>
     </ul>
     <form class="search-form">
       <input type="text" placeholder="Поиск...">
@@ -46,7 +46,7 @@
   <div class="column">
     <p>Контакты:</p>
     <ul>
-      <li>+7 (952) 577-39-87</li>
+      <li>+7 (980) 999-11-10</li>
       <li>+7 (919) 897-40-08</li>
       <li>Email: shinservice@gmail.com</li>
     </ul>

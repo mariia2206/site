@@ -1,9 +1,80 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 
 {% block title%}
-<h1>m</h1>
+О нас
 {% endblock %}
 
 {% block content %}
-<h1>t</h1>
+<div class="about-us">
+    <!-- Заголовок о нас -->
+    <h1 class="about">О нас</h1>
+
+    <!-- Первый блок с текстом и изображением -->
+    <section class="about-section">
+    <div class="info">
+        <div class="text">
+            <p class="about-text1">Добро пожаловать в наш шиномонтажный центр в городе Батайске!
+                Мы - команда профессионалов, гордящаяся тем, что обеспечиваем безопасность и комфорт наших клиентов с 2008 года. Наша история началась с простой миссии: предоставить качественные услуги по установке и обслуживанию автомобильных шин.
+                С годами мы выросли и стали одним из ведущих шиномонтажных центров в регионе. Наш опыт и профессионализм помогают нам решать любые задачи, связанные с шинами, будь то замена, балансировка или ремонт.
+                </p>
+        </div>
+        <div class="image">
+            <img class="about-image" src="{% static 'shinka/img/о нас главная.jpg' %}" alt="Изображение о нас 1">
+        </div>
+    </div>
+    </section>
+
+    <!-- Второй блок с изображением и текстом -->
+    <section class="about-section">
+    <div class="info">
+        <div class="image">
+            <img class="about-image" src="{% static 'shinka/img/o nas2.jpg' %}" alt="Изображение о нас 2">
+        </div>
+        <div class="text">
+            <p class="about-text">Мы стремимся к постоянному совершенствованию и инновациям, всегда следуя за технологическими трендами в автомобильной промышленности. Наша современная техническая база и высококвалифицированный персонал обеспечивают выполнение работ на самом высоком уровне.
+                Наша цель - не только обслужить ваш автомобиль, но и сделать ваше посещение приятным и удобным. Мы стремимся к высокому уровню сервиса и индивидуальному подходу к каждому клиенту.
+                Мы гордимся тем, что служим нашему сообществу уже многие годы, и с нетерпением ждем возможности помочь вам с вашими потребностями в шиномонтаже. Спасибо, что выбираете нас!</p>
+        </div>
+    </div>
+    </section>
+</div>
+
+<div class="blue-block">
+    <h2>За 16 лет мы имеем:</h2>
+    <div class="square">
+        <img class=""img-about" src="{% static 'shinka/img/авто.png' %}" alt="Фото 1">
+        <p>Более 50 000 успешно <br> обслуженных автомобилей</p>
+    </div>
+    <div class="square">
+        <img class=""img-about" src="{% static 'shinka/img/спущенное колесо.png' %}" alt="Фото 2">
+        <p>Более 100 000 установленных <br> и замененных шин</p>
+    </div>
+    <div class="square">
+        <img class=""img-about" src="{% static 'shinka/img/время.png' %}" alt="Фото 3">
+        <p>Среднее время обслуживания <br> менее 30 минут</p>
+    </div>
+    <div class="square">
+        <img class=""img-about" src="{% static 'shinka/img/улыбка.png' %}" alt="Фото 4">
+        <p>99% удовлетворенных <br> клиентов</p>
+    </div>
+</div>
+<h1 class="about">Фотогалерея</h1>
+<div class="gallery">
+        {% for photo in photos %}
+            <div class="photo">
+                <img src="{{ photo.image.url }}" alt="{{ photo.caption }}">
+                <div class="caption">{{ photo.caption }}</div>
+            </div>
+        {% endfor %}
+</div>
+<!-- Модальное окно для увеличенного изображения -->
+<div id="modal" style="display: none;">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+    <div id="modal-caption"></div>
+</div>
+
+<!-- Подключение вашего статического JavaScript файла -->
+<script src="{% static 'shinka/js/script.js' %}"></script>
 {% endblock %}

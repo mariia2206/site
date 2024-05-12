@@ -371,8 +371,78 @@ body {
         margin-bottom: 5px;
         padding-top: 50px;
     }
+    /* Стили для галереи */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем галерею по горизонтали */
+    margin: 50px 200px; /* Отступ сверху */
+}
 
-    /* Стили для текста в квадратах */
-    .square p {
-        color: white;
-    }
+.photo .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+.photo:hover .caption {
+    opacity: 1;
+}
+
+.photo {
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.photo img {
+    width: 320px;
+    height: auto;
+}
+
+/* Стили для модального окна */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    padding-top: 10vh;
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}

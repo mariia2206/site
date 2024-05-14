@@ -64,6 +64,25 @@
     </ul>
   </section>
 
+<section class="testimonial-section">
+    <h1 class="titleotziv">Отзывы</h1>
+    <p class="titleotziv">Автовладельцы о нас</p>
+    <div class="bel">
+    <div class="testimonial-container">
+    <div class="testimonial-slider">
+        {% for review in reviews %}
+        <div class="testimonial-slide">
+            <img src="{{ review.photo.url }}" alt="{{ review.author }}" class="avatar">
+            <p class="author">{{ review.author }}</p>
+            <p class="review-text">{{ review.review_text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+</div>
+    </div>
+</section>
     <div class="question-form">
   <div class="form-header">Остались вопросы?<p class="zad">Задай их нам!</p></div>
   <form action="#" method="post">
@@ -89,5 +108,6 @@
     </div>
   </form>
 </div>
-
+<!-- Подключение вашего статического JavaScript файла -->
+<script src="{% static 'shinka/js/script_slider.js' %}"></script>
 {% endblock %}

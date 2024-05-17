@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title%}
+Услуги и акции
+{% endblock %}
+
+{% block content %}
+<h1 class="name_uslug">{{ service.name }}</h1>
+<div class="service-detail-container">
+    <div>
+        <img class="photo_uslug2" src="{{ service.photo.url }}" alt="{{ service.name }}">
+    </div>
+    <div class="full_description2">
+        <p>{{ service.full_description }}</p>
+    </div>
+</div>
+    <button class="button" onclick="document.getElementById('service-form').style.display='block'">Записаться</button>
+
+{% endblock %}

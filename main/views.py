@@ -19,20 +19,23 @@ def uslugi(request):
 def contacts(request):
     return render(request, 'main/contacts.html')
 
-from django.shortcuts import render, get_object_or_404, redirect
-from .models import Service
-from .forms import ServiceSignupForm
+def service_detail_view(request, id):
+    service = Service.objects.get(pk=id)
+    return render(request, 'main/service_detail.html', {'service': service})
 
-def service_view(request, id=None):
-    if id:
-        service = get_object_or_404(Service, id=id)
-        if request.method == 'POST':
-            form = ServiceSignupForm(request.POST)
-            if form.is_valid():
-                # Обработка данных формы
-                # Например, можно сохранить данные в базу или отправить email
-                return redirect('main/uslugi.html', id=id)
+# views.py
+from django.shortcuts import render, redirect
+from .forms import ApplicationForm
 
+def application_view(request):
+    if request.method == 'POST':
+        form = ApplicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
     else:
-        services = Service.objects.all()
-        return render(request, 'main/uslugi.html', {'services': services})
+        form = ApplicationForm()
+    return render(request, 'main/uslugi.html', {'form': form})
+
+def success_view(request):
+    return render(request, 'success.html')

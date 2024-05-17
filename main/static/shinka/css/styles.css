@@ -127,7 +127,7 @@ body {
     }
 
     .about-image {
-      width: 600px; /* Максимальная ширина изображения */
+      width: 500px; /* Максимальная ширина изображения */
     }
     .about-text{
       text-align: right;
@@ -531,4 +531,65 @@ body {
 .review-text {
   padding: 10px 30px;
   overflow-wrap: break-word; /* Добавлено свойство для переноса длинных слов */
+}
+
+
+/* Стили для контейнера услуг */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 200px; /* Отступ сверху для контейнера услуг */
+}
+
+/* Стили для каждой услуги */
+.service {
+    margin: 15px;
+    box-sizing: border-box; /* Учитывать отступы и границы в общей ширине */
+    text-align: center; /* Центрировать содержимое внутри блока */
+}
+
+/* Стили для изображения в каждой услуге */
+.photo_uslug {
+    width: 320px;
+    height: 200px;
+}
+
+/* Стили для названия услуги */
+.name_uslug {
+    margin-top: 10px; /* Отступ сверху для названия услуги */
+    text-align: center; /* Центрировать текст */
+
+}
+
+/* Стили для текста описания услуги */
+.text_uslug {
+    margin-top: 10px; /* Отступ сверху для текста описания услуги */
+}
+/* Стили для выбранной услуги */
+.service-detail-container{
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content:space-between;
+    margin:20px 200px;
+}
+/* Стили для изображения в каждой услуге */
+.photo_uslug2 {
+    width: 500px;
+    height: 350px;
+    margin-right: 20px; /* Расстояние между фотографией и текстом */
+}
+
+.name_uslug2 {
+    margin:20px 200px;
+    text-align: right;
+}
+.full_description2{
+
+    text-align: right;
+
+}
+.service-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: black; /* Изменяем цвет текста на черный */
 }

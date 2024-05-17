@@ -8,3 +8,17 @@ admin.site.register(Photo)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ['author', 'review_text']
     search_fields = ['author', 'review_text']
+
+
+from .models import Action
+from .forms import ActionForm
+
+class ActionAdmin(admin.ModelAdmin):
+    form = ActionForm
+
+admin.site.register(Action, ActionAdmin)
+
+from django.contrib import admin
+from .models import Service
+
+admin.site.register(Service)

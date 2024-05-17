@@ -8,12 +8,7 @@ class Photo(models.Model):
     def __str__(self):
         return self.caption
 
-# Класс поиска
-class Product(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
-
-
+# Класс для отзывов
 class Review(models.Model):
     author = models.CharField(max_length=100)
     review_text = models.TextField()
@@ -22,3 +17,18 @@ class Review(models.Model):
     def __str__(self):
         return self.author
 
+class Action(models.Model):
+    photo2 = models.ImageField(upload_to='action_photos/')
+    author2 = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.author2
+
+
+class Service(models.Model):
+    name = models.CharField(max_length=200)
+    full_description = models.TextField()
+    photo = models.ImageField(upload_to='services_photos/')
+
+    def __str__(self):
+        return self.name

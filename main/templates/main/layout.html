@@ -26,17 +26,6 @@
       <li><a href="{% url 'uslugi' %}" rel="stylesheet">Услуги и акции</a></li>
       <li><a href="{% url 'contacts' %}" rel="stylesheet">Контакты</a></li>
     </ul>
-    <form class="search-form" method="GET" action="{% url 'search' %}">
-      <input type="text" placeholder="Поиск...">
-      <button type="submit"><i class="fas fa-search"></i></button> <!-- Используем иконку для кнопки поиска -->
-    </form>
-      <!-- search_form.html -->
-<form >
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Search</button>
-</form>
-
   </nav>
     {% block content %}
     {% endblock %}
@@ -55,7 +44,7 @@
     <ul>
       <li>+7 (980) 999-11-10</li>
       <li>+7 (919) 897-40-08</li>
-      <li>Email: shinservice@gmail.com</li>
+      <li>Email: shinservicebtskdon@gmail.com</li>
     </ul>
   </div>
   <div class="column">

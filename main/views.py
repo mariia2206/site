@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from .models import Photo
-from .models import Product
-from .forms import SearchForm
 from .models import Review
+from .models import Service
 
 # Create your views here.
 def index(request):
@@ -14,20 +13,26 @@ def about(request):
     return render(request, 'main/about.html', {'photos': photos})
 
 def uslugi(request):
-    return render(request, 'main/uslugi.html')
+    services = Service.objects.all()
+    return render(request, 'main/uslugi.html', {'services': services})
 
 def contacts(request):
     return render(request, 'main/contacts.html')
 
-def search(request):
-    if request.method == 'GET':
-        form = SearchForm(request.GET)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            # Выполните поиск с использованием query, например:
-            results = Product.objects.filter(name__icontains=query)  # Замените на свой запрос
-            return render(request, 'main/search_results.html', {'results': results})
-    else:
-        form = SearchForm()
-    return render(request, 'main/search_form.html', {'form': form})
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Service
+from .forms import ServiceSignupForm
 
+def service_view(request, id=None):
+    if id:
+        service = get_object_or_404(Service, id=id)
+        if request.method == 'POST':
+            form = ServiceSignupForm(request.POST)
+            if form.is_valid():
+                # Обработка данных формы
+                # Например, можно сохранить данные в базу или отправить email
+                return redirect('main/uslugi.html', id=id)
+
+    else:
+        services = Service.objects.all()
+        return render(request, 'main/uslugi.html', {'services': services})

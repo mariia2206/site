@@ -73,13 +73,14 @@ class ApplicationForm(forms.ModelForm):
             'agreement': 'Я согласен на обработку персональных данных',
         }
 
+    # Функция для проверки почты
     def clean_email(self):
         email = self.cleaned_data['email']
         if '@' not in email:
             raise ValidationError("Email должен содержать символ '@'.")
         return email
 
-
+    # Функция для появления надписи выберите услугу вместо ----
     def __init__(self, *args, **kwargs):
         super(ApplicationForm, self).__init__(*args, **kwargs)
         self.fields['service'].empty_label = 'Выберите услугу:'

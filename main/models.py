@@ -1,6 +1,7 @@
-# Create your models here.
 from django.db import models
-# Класс для галереи
+from django.core.mail import send_mail
+from django.conf import settings
+
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos/')
     caption = models.CharField(max_length=255)
@@ -8,7 +9,6 @@ class Photo(models.Model):
     def __str__(self):
         return self.caption
 
-# Класс для отзывов
 class Review(models.Model):
     author = models.CharField(max_length=100)
     review_text = models.TextField()
@@ -24,35 +24,29 @@ class Action(models.Model):
     def __str__(self):
         return self.author2
 
-
 class Service(models.Model):
     name = models.CharField(max_length=200)
-    full_description = models.TextField()
     photo = models.ImageField(upload_to='services_photos/')
+    full_description = models.TextField()
 
     def __str__(self):
         return self.name
-
-# models.py
-from django.db import models
-from django.core.mail import send_mail
-from django.conf import settings
 
 class Application(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     tire_size = models.CharField(max_length=50)
-    service = models.CharField(max_length=100)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
     appointment_date = models.DateField()
-    appointment_time = models.TimeField()
+    appointment_time = models.CharField(max_length=10)
     comment = models.TextField()
     agreement = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
     rejected = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.service.name}"
 
     def send_approval_email(self):
         if self.approved and not self.rejected:

@@ -581,15 +581,12 @@ body {
           margin: 20px 0px;
           color: #fff;
         }
-        .form-group {
-          margin-bottom: 20px;
-          margin-right: 70px;
-          margin-left: 60px;
-        }
+
         .form-group label {
           display: block;
           margin-bottom: 5px;
         }
+
         .form-group input[type="text"],
         .form-group input[type="email"],
         .form-group input[type="tel"]{  width: 100%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
@@ -600,6 +597,19 @@ body {
           width: 100%;
           padding: 10px;
           background-color: #D9D9D9;
+        }
+        .form-group select{
+          width: 106%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
+          height: 40px; /* Высота полей ввода */
+          background-color: #D9D9D9; /* Цвет фона полей ввода */
+          padding-left:10px;
+          color:grey;
+          }
+        .form-group input[type="date"],
+        .form-group input[type="time"]
+        {
+             background-color: #D9D9D9;
+
         }
         .form-group textarea {
           resize: vertical;
@@ -632,3 +642,15 @@ body {
         }
         .sogl{font-size: 15px;}
         .zad{font-size: 15px;}
+
+        .form-row {
+            display: flex;
+            justify-content:flex-start;
+            padding-right: 800px;
+        }
+
+      .form-row .form-group {
+    flex: 1; /* Изменяем ширину, чтобы поля занимали одинаковое пространство */
+    margin-right: 10px; /* Добавляем небольшой отступ между полями */
+}
+

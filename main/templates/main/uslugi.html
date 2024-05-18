@@ -22,40 +22,50 @@
 <p>Нет доступных услуг.</p>
 {% endif %}
 
-<div class="usluga-form">
-  <div class="form-header">Остались вопросы?<p class="zad">Задай их нам!</p></div>
-  <form action="#" method="post">
-    <div class="form-group">
-      <input type="text" id="name" name="name" required placeholder="Введите ФИО:">
+ <div class="usluga-form">
+        <div class="form-header">Записаться на услугу</div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.email }}
+            </div>
+          <div class="form-group">
+    <input type="text" id="id_phone" name="phone" placeholder="Введите номер телефона">
+</div>
+
+            <div class="form-group">
+                {{ form.tire_size }}
+            </div>
+            <div class="form-group">
+                {{ form.service }}
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    {{ form.appointment_date }}
+                </div>
+                <div class="form-group">
+                    {{ form.appointment_time }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.comment }}
+            </div>
+            <div class="form-group form-checkbox">
+                {{ form.agreement }}
+                <label for="{{ form.agreement.id_for_label }}"><p class="sogl">{{ form.agreement.label }}</p></label>
+            </div>
+            <div class="form-submit">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-      <input type="email" id="email" name="email" required placeholder="Введите email:">
-    </div>
-    <div class="form-group">
-      <input type="tel" id="phone" name="phone" required placeholder="Введите номер телефона:">
-    </div>
-      <div class="form-group">
-      <input type="tel" id="phone" name="phone" required placeholder="Выберите размер шин:">
-    </div>
-     <div class="form-group">
-      <input type="tel" id="phone" name="phone" required placeholder="Выберите услугу:">
-    </div>
-        <div class="form-group">
-      <input type="tel" id="phone" name="phone" required placeholder="Выберите дату записи:">
-    </div>
-        <div class="form-group">
-      <input type="tel" id="phone" name="phone" required placeholder="Выберите время записи:">
-    </div>
-    <div class="form-group">
-      <label for="question"></label>
-      <textarea id="question" name="question" rows="5" required placeholder="Комментарий:"></textarea>
-    </div>
-    <div class="form-group form-checkbox">
-      <input type="checkbox" id="agreement" name="agreement" required>
-      <label for="agreement"><p class="sogl">Я согласен на обработку персональных данных</p></label>
-    </div>
-    <div class="form-submit">
-      <button type="submit">Отправить</button>
-    </div>
-  </form></div>
+
+<!-- Плагин для правильного форма ввода телефона  -->
+<script src="https://cdn.jsdelivr.net/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+ <!-- Подключение вашего статического JavaScript файла -->
+<script src="{% static 'shinka/js/phone.js' %}"></script>
 {% endblock %}

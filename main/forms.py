@@ -51,15 +51,15 @@ class ApplicationForm(forms.ModelForm):
         model = Application
         fields = ['name', 'email', 'phone', 'tire_size', 'service', 'appointment_date', 'appointment_time', 'comment', 'agreement']
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Введите ФИО:'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Введите e-mail:'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'Введите номер телефона:'}),
-            'tire_size': forms.TextInput(attrs={'placeholder': 'Выберите размер шин:'}),
-            'service': forms.Select(),
-            'appointment_date': forms.DateInput(attrs={'type': 'date'}),
-            'appointment_time': forms.TextInput(attrs={'type': 'time'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Введите ФИО:', 'required': True}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Введите e-mail:', 'required': True}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Введите номер телефона:', 'required': True}),
+            'tire_size': forms.TextInput(attrs={'placeholder': 'Выберите размер шин:', 'required': True}),
+            'service': forms.Select({'required': True}),
+            'appointment_date': forms.DateInput(attrs={'type': 'date', 'required': True}),
+            'appointment_time': forms.TextInput(attrs={'type': 'time', 'required': True}),
             'comment': forms.Textarea(attrs={'placeholder': 'Комментарий', 'rows': 5}),
-            'agreement': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'agreement': forms.CheckboxInput(attrs={'class': 'form-check-input', 'required': True}),
         }
         labels = {
             'name': '',
@@ -85,4 +85,30 @@ class ApplicationForm(forms.ModelForm):
         super(ApplicationForm, self).__init__(*args, **kwargs)
         self.fields['service'].empty_label = 'Выберите услугу:'
 
+    # Поле комментария необязательное
+    def __init__(self, *args, **kwargs):
+        super(ApplicationForm, self).__init__(*args, **kwargs)
+        self.fields['comment'].required = False
 
+
+from django import forms
+from .models import Question
+
+class QuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ['name', 'email', 'phone', 'question_text', 'agreement']
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Введите ФИО:', 'required': True}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Введите email:', 'required': True}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Введите номер телефона:', 'required': True}),
+            'question_text': forms.Textarea(attrs={'placeholder': 'Введите ваш вопрос:', 'rows': 5, 'required': True}),
+            'agreement': forms.CheckboxInput(attrs={'required': True}),
+        }
+        labels = {
+            'name': '',
+            'email': '',
+            'phone': '',
+            'question_text': '',
+            'agreement': 'Я согласен на обработку персональных данных',
+        }

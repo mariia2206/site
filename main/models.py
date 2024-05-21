@@ -2,6 +2,7 @@ from django.db import models
 from django.core.mail import send_mail
 from django.conf import settings
 
+
 class Photo(models.Model):
     image = models.ImageField(upload_to='photos/')
     caption = models.CharField(max_length=255)
@@ -59,3 +60,19 @@ class Application(models.Model):
             subject = "Ваша заявка отклонена"
             message = "Здравствуйте, Ваша заявка на услугу была отклонена."
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [self.email])
+
+
+from django.db import models
+
+class Question(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    question_text = models.TextField()
+    agreement = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    answered = models.BooleanField(default=False)
+    answer_text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Question from {self.name} ({self.email})"

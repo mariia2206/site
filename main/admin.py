@@ -30,6 +30,30 @@ reject_applications.short_description = "Отклонить выбранные �
 
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phone', 'service', 'appointment_date', 'appointment_time', 'approved', 'rejected')
+    list_filter = ['approved', 'rejected', ('appointment_date', admin.DateFieldListFilter), 'appointment_time']
+    search_fields = ['name', 'email', 'phone', 'tire_size',  'appointment_date', 'appointment_time']
     actions = [approve_applications, reject_applications]
 
 admin.site.register(Application, ApplicationAdmin)
+
+from django.contrib import admin
+from django.core.mail import send_mail
+from .models import Question
+
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'phone', 'created_at', 'answered']
+    list_filter = ['answered', 'created_at']
+    search_fields = ['name', 'email', 'phone', 'question_text']
+
+    def save_model(self, request, obj, form, change):
+        if change and 'answer_text' in form.changed_data:
+            obj.answered = True
+            send_mail(
+                'Ответ на ваш вопрос',
+                obj.answer_text,
+                'your_email@example.com',  # Отправитель
+                [obj.email],  # Получатель
+                fail_silently=False,
+            )
+        super().save_model(request, obj, form, change)

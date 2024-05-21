@@ -1,0 +1,26 @@
+    <div class="question-form">
+        <div class="form-header">Остались вопросы?<p class="zad">Задай их нам!</p></div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                {{ form.phone }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.question_text.id_for_label }}"></label>
+                {{ form.question_text }}
+            </div>
+            <div class="form-group form-checkbox">
+                {{ form.agreement }}
+                <label for="{{ form.agreement.id_for_label }}"><p class="sogl">{{ form.agreement.label }}</p></label>
+            </div>
+            <div class="form-submit">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>

@@ -19,11 +19,11 @@ class Review(models.Model):
         return self.author
 
 class Action(models.Model):
-    photo2 = models.ImageField(upload_to='action_photos/')
-    author2 = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='action_photos/')
+    author = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.author2
+        return self.author
 
 class Service(models.Model):
     name = models.CharField(max_length=200)

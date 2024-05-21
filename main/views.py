@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Photo
 from .models import Review
 from .models import Service
+from .models import Action
 
 def about(request):
     photos = Photo.objects.all()
@@ -18,7 +19,7 @@ from .models import Service
 
 def uslugi(request):
     services = Service.objects.all()
-
+    actions = Action.objects.all()
     if request.method == 'POST':
         form = ApplicationForm(request.POST)
         if form.is_valid():
@@ -27,7 +28,7 @@ def uslugi(request):
     else:
         form = ApplicationForm()
 
-    return render(request, 'main/uslugi.html', {'services': services, 'form': form})
+    return render(request, 'main/uslugi.html', {'actions': actions, 'services': services, 'form': form})
 
 def success_view(request):
     return render(request, 'main/success.html')

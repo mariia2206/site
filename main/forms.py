@@ -18,7 +18,7 @@ class ReviewForm(forms.ModelForm):
 class ActionForm(forms.ModelForm):
     class Meta:
         model = Action
-        fields = ['photo2', 'author2']
+        fields = ['photo', 'author']
 
 
 class ServiceForm(forms.ModelForm):
@@ -85,11 +85,8 @@ class ApplicationForm(forms.ModelForm):
         super(ApplicationForm, self).__init__(*args, **kwargs)
         self.fields['service'].empty_label = 'Выберите услугу:'
 
-    # Поле комментария необязательное
-    def __init__(self, *args, **kwargs):
-        super(ApplicationForm, self).__init__(*args, **kwargs)
+        # Поле комментария необязательное
         self.fields['comment'].required = False
-
 
 from django import forms
 from .models import Question

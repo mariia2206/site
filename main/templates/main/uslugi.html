@@ -6,7 +6,23 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="about">Наши услуги</h1>
+<section class="testimonial-section2">
+    <h1 class="titleotziv">Акция!</h1>
+    <div class="testimonial-container2">
+    <div class="testimonial-slider2">
+        {% for action in actions %}
+        <div class="testimonial-slide">
+            <img src="{{ action.photo.url }}" alt="{{ action.author }}" class="avatar2">
+            <p class="author2">{{ action.author }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+</div>
+</section>
+
+<h1 class="about">Наши услуги</h1>
 {% if services %}
 <div class="services-container">
     {% for service in services %}
@@ -65,7 +81,7 @@
 
 <!-- Плагин для правильного форма ввода телефона  -->
 <script src="https://cdn.jsdelivr.net/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-
- <!-- Подключение вашего статического JavaScript файла -->
+ <!-- Подключение статического JavaScript файла -->
 <script src="{% static 'shinka/js/phone.js' %}"></script>
+<script src="{% static 'shinka/js/script_slider.js' %}"></script>
 {% endblock %}

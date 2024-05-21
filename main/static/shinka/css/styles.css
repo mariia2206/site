@@ -496,11 +496,6 @@ body {
   text-align: center; /* Выравнивание текста по центру */
 }
 
-.prev img,
-.next img {
-  width: 24px; /* Размер иконок стрелок */
-  height: 24px;
-}
 .titleotziv{
     color: white;
     text-align: center;
@@ -654,3 +649,51 @@ body {
     margin-right: 10px; /* Добавляем небольшой отступ между полями */
 }
 
+.avatar2 {
+    width: 900px;
+    height: 400px;
+
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px; /* Для отступа между изображениями */
+    display: block; /* Для корректного центрирования */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+
+.testimonial-section2 {
+    align-items:center;
+    background-position: center;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #252A46;
+    height:550px;
+  }
+
+
+.testimonial-container2 {
+    max-width: 1200px; /* Увеличили ширину контейнера */
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-slider2{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden; /* Убираем горизонтальную полосу прокрутки */
+    scroll-snap-type: x mandatory;
+    justify-content:center;
+}
+
+
+.testimonial-slide {
+    display:flex;
+    justify-content:center;
+    min-width: 500px;
+    scroll-snap-align: start;
+    padding: 20px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+.author2{
+    color:white;
+}

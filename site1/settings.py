@@ -155,4 +155,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587  # Порт для SMTP сервера Gmail
 EMAIL_USE_TLS = True  # Использовать TLS (Transport Layer Security) для защиты соединения
 EMAIL_HOST_USER = 'shinservicebtskdon@gmail.com'  # Ваша учетная запись Gmail для отправки писем
-EMAIL_HOST_PASSWORD = 'sinu pgve rwfr ooiu'  # Пароль для вашей учетной записи Gmail или специальный пароль при использовании двухфакторной аутентификации
+EMAIL_HOST_PASSWORD = 'sinu pgve rwfr ooiu'  # Специальный пароль при использовании двухфакторной аутентификации

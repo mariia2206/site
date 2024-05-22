@@ -1,0 +1,641 @@
+@media (max-width: 767px) {
+    /* Стили для мобильных устройств */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size:14px;
+  }
+.banner .text .h1{
+    font-size:24px;
+    }
+  nav {
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+
+  }
+
+  .menu li {
+    display: inline;
+    margin-right: 5px;
+  }
+
+  .menu li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .menu li a:hover {
+    background-color: #252A46;
+    color:white;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 7px;
+  }
+   /* Стили для шапки */
+   .header {
+    background-color: #252A46; /* Синий цвет фона */
+    color: #ffffff; /* Белый цвет текста */
+    padding: 10px 0px; /* Поля вокруг текста */
+    display: flex; /* Располагаем элементы в строку */
+    justify-content: space-between; /* Располагаем элементы по краям */
+    align-items: center; /* Выравниваем элементы по вертикали */
+  }
+  .contact_header{
+    display: flex; /* Располагаем элементы в строку */
+    justify-content:flex-end;
+    align-items: center; /* Выравниваем элементы по вертикали */
+  }
+  .contact_header img{
+    padding: 0px  5px;
+  }
+  .header p {
+    margin: 0; /* Убираем отступы */
+  }
+
+     /* Стили для баннера */
+     .banner {
+      background-color: #252A46; /* Синий цвет фона */
+      color: #ffffff; /* Белый цвет текста */
+      padding: 20px; /* Поля вокруг текста */
+      display: flex; /* Располагаем элементы в строку */
+      align-items: center; /* Выравниваем элементы по вертикали */
+      flex-direction:column-reverse;
+      padding: 0px 10px;
+      padding-bottom: 10px;
+    }
+
+    .text {
+      flex: 1; /* Занимает все доступное пространство по горизонтали */
+    }
+
+    .button {
+      text-decoration: none;
+      background-color: #252A46; /* Белый цвет фона кнопки */
+      color: white; /* Синий цвет текста кнопки */
+      border: 1px solid #D9D9D9; /* Белая обводка кнопки */
+      padding: 10px 25px; /* Поля вокруг текста кнопки */
+      border-radius: 10px; /* Закругленные края кнопки */
+      font-size: 14px; /* Размер текста кнопки */
+      cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+      transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавное изменение цвета фона, текста и анимации выдвижения кнопки */
+}
+
+
+    .button:hover {
+      background-color:#D9D9D9; /* Изменяем цвет фона при наведении */
+      color: black; /* Изменяем цвет текста при наведении */
+      transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+    }
+
+    .image {
+      max-width: 350px; /* Максимальная ширина картинки */
+
+    }
+
+    /* Стили для раздела О нас */
+    .about-section {
+      display: flex; /* Располагаем элементы в строку */
+      align-items: center; /* Выравниваем элементы по вертикали */
+      flex-direction:column;
+      padding: 20px 45px;
+    }
+
+    .about-image {
+      width: 300px; /* Максимальная ширина изображения */
+    }
+    .about-text{
+      text-align: justify;
+    }
+    .about-text1{
+      text-align: left;
+      padding-right: 200px;
+    }
+    .about{
+      padding-top: 20px;
+      text-align: center;}
+
+      .advantages-section {
+        display: flex;
+      flex-direction:column;
+        align-items: center;
+      }
+      .advantages-list {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+      }
+      .advantages-item {
+        display: flex;
+        align-items: center;
+      }
+      .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #252A46;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+      }
+      .icon {
+        height: auto;
+        fill: white;
+        width: 30px ;
+      }
+      .photo_preim{
+        width: 300px;
+      }
+      .preim_text{
+        width: 250px;
+      }
+      .icon4{
+        height: auto;
+        fill: white;
+        width:30px;
+      }
+      .preim{
+        text-align: center;}
+
+
+        .question-form {
+          margin: 50px auto;
+          padding: 10px;
+          background-color: #252A46;
+          border-radius: 30px;
+        }
+        .form-header {
+          text-align: center;
+          color: #fff;
+        }
+        .form-group {
+          margin-bottom: 10px;
+          margin-right: 40px;
+          margin-left: 30px;
+        }
+
+        .footer {
+          background-color: #252A46;
+          color: #ffffff;
+          display: flex;
+          flex-direction:column;
+          align-items:center;
+          text-align:center;
+          padding: 20px 0px;
+}
+
+        .column ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .column ul li  {
+          margin-bottom: 15px;
+        }
+        .column li a{
+          color: #fff;
+           text-decoration: none;}
+        .column img{
+          padding-right: 10px;
+        }
+        .button_strelka {
+          text-decoration: none;
+          background-color: #252A46; /* Белый цвет фона кнопки */
+          color: white; /* Синий цвет текста кнопки */
+          border: 1px solid #D9D9D9; /* Белая обводка кнопки */
+          padding: 10px 17px; /* Поля вокруг текста кнопки */
+          border-radius: 60px; /* Закругленные края кнопки */
+          font-size: 18px; /* Размер текста кнопки */
+          cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+          transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавное изменение цвета фона, текста и анимации выдвижения кнопки */
+    }
+
+
+        .button_strelka:hover{
+          background-color:#D9D9D9; /* Изменяем цвет фона при наведении */
+          color: black; /* Изменяем цвет текста при наведении */
+          transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+        }
+        .karta{
+          padding-bottom: 120px ;
+        }
+
+          /* Общий стиль для контейнера */
+    .about-us {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+  }
+
+
+  /* Стиль для блока с текстом и изображением */
+  .info {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+      margin: 0px;
+  }
+
+  /* Стиль для текстового блока */
+  .text {
+      flex: 1;
+      margin-right: 20px;
+  }
+
+
+
+  /* Медиа запрос для адаптивности */
+  @media screen and (max-width: 768px) {
+      .info {
+          flex-direction: column;
+      }
+
+      .text, .image {
+          margin-right: 0;
+          margin-bottom: 20px;
+      }
+  }
+
+
+      /* Стили для блока синего цвета */
+      .blue-block {
+        background-color:#252A46;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin: 50px 0px;
+    }
+
+    /* Стили для квадратов */
+    .square {
+        display: inline-block;
+        align-items: center;
+        width: 280px;
+        height: 270px;
+        background-color:#252A46;
+        border: 2px solid white;
+        border-radius: 20px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    /* Стили для изображений в квадратах */
+    .square img {
+        max-width: 150px;
+        margin-bottom: 5px;
+        padding-top: 50px;
+    }
+    /* Стили для галереи */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Центрируем галерею по горизонтали */
+    margin: 50px 200px; /* Отступ сверху */
+}
+
+.photo .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+.photo:hover .caption {
+    opacity: 1;
+}
+
+.photo {
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.photo img {
+    width: 320px;
+    height: auto;
+}
+
+/* Стили для модального окна */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    padding-top: 10vh;
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    left: 10px;
+     color:white;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    right: 10px;
+    color:white;
+}
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px; /* Для отступа между изображениями */
+    display: block; /* Для корректного центрирования */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+
+.testimonial-section {
+  align-items:center;
+  background-position: center;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+  background-color: #252A46;
+  height:350px;
+  }
+
+
+.testimonial-container {
+  max-width: auto; /* Увеличили ширину контейнера */
+  margin: 0 auto;
+  position: relative;
+
+}
+.testimonial-slider {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: hidden; /* Убираем горизонтальную полосу прокрутки */
+    justify-content:center;
+    background-color:white;
+    width:250px;
+    height:230px;
+    border-radius:20px;
+}
+
+
+.titleotziv{
+    color: white;
+    text-align: center;
+}
+.review-text {
+  padding: 0px 120px;
+  overflow-wrap: break-word; /* Добавлено свойство для переноса длинных слов */
+}
+
+
+/* Стили для контейнера услуг */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 200px; /* Отступ сверху для контейнера услуг */
+}
+
+/* Стили для каждой услуги */
+.service {
+    margin: 15px;
+    box-sizing: border-box; /* Учитывать отступы и границы в общей ширине */
+    text-align: center; /* Центрировать содержимое внутри блока */
+}
+
+/* Стили для изображения в каждой услуге */
+.photo_uslug {
+    width: 320px;
+    height: 200px;
+}
+
+/* Стили для названия услуги */
+.name_uslug {
+    margin-top: 10px; /* Отступ сверху для названия услуги */
+    text-align: center; /* Центрировать текст */
+
+}
+
+/* Стили для текста описания услуги */
+.text_uslug {
+    margin-top: 10px; /* Отступ сверху для текста описания услуги */
+}
+/* Стили для выбранной услуги */
+.service-detail-container{
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content:space-between;
+    margin:20px 200px;
+}
+/* Стили для изображения в каждой услуге */
+.photo_uslug2 {
+    width: 500px;
+    height: 350px;
+    margin-right: 20px; /* Расстояние между фотографией и текстом */
+}
+
+.full_description2{
+
+    text-align: right;
+
+}
+.service-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: black; /* Изменяем цвет текста на черный */
+}
+
+
+ .usluga-form {
+          max-width: 500px;
+          margin: 50px auto;
+          padding: 20px;
+          background-color: #252A46;
+          border-radius: 30px;
+        }
+        .form-header {
+          text-align: center;
+          font-size: 24px;
+          margin: 20px 0px;
+          color: #fff;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"]{  width: 100%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
+          height: 20px; /* Высота полей ввода */
+          padding: 10px; /* Отступы внутри поля ввода */
+          background-color: #D9D9D9; /* Цвет фона полей ввода */}
+        .form-group textarea {
+          width: 100%;
+          padding: 10px;
+          background-color: #D9D9D9;
+        }
+        .form-group select{
+          width: 106%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
+          height: 40px; /* Высота полей ввода */
+          background-color: #D9D9D9; /* Цвет фона полей ввода */
+          padding-left:10px;
+          color:grey;
+          }
+        .form-group input[type="date"],
+        .form-group input[type="time"]
+        {
+             background-color: #D9D9D9;
+
+        }
+        .form-group textarea {
+          resize: vertical;
+        }
+        .form-checkbox {
+          display: flex;
+          align-items: center;
+          color: #D9D9D9;
+        }
+        .form-checkbox input[type="checkbox"] {
+          margin-right: 10px;
+        }
+        .form-submit {
+          text-align: center;
+        }
+        .form-submit button {
+          padding: 12px 40px;
+          margin-bottom: 20px;
+          font-size: 18px;
+          color:white;
+          background-color:#252A46;
+          border: 1px solid #fff;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+        }
+        .form-submit button:hover {
+          background-color:#D9D9D9;
+          color: #000;
+        }
+        .sogl{font-size: 15px;}
+        .zad{font-size: 15px;}
+
+        .form-row {
+            display: flex;
+            justify-content:flex-start;
+            padding-right: 800px;
+        }
+
+      .form-row .form-group {
+    flex: 1; /* Изменяем ширину, чтобы поля занимали одинаковое пространство */
+    margin-right: 10px; /* Добавляем небольшой отступ между полями */
+}
+
+.avatar2 {
+    width: 900px;
+    height: 400px;
+
+    object-fit: cover;
+    object-position: center;
+    margin-right: 10px; /* Для отступа между изображениями */
+    display: block; /* Для корректного центрирования */
+    margin: 0 auto; /* Центрирование изображения */
+}
+
+
+.testimonial-section2 {
+    align-items:center;
+    background-position: center;
+    text-align: center;
+    padding: 50px 0;
+    background-color: #252A46;
+    height:550px;
+  }
+
+
+.testimonial-container2 {
+    max-width: 1200px; /* Увеличили ширину контейнера */
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-slider2{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden; /* Убираем горизонтальную полосу прокрутки */
+    scroll-snap-type: x mandatory;
+    justify-content:center;
+}
+
+
+.testimonial-slide {
+    display:flex;
+    justify-content:center;
+    min-width: 500px;
+    scroll-snap-align: start;
+    padding: 20px;
+    text-align: center; /* Выравнивание текста по центру */
+}
+.author2{
+    color:white;
+}
+        }
+

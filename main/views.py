@@ -24,6 +24,13 @@ def uslugi(request):
         form = ApplicationForm(request.POST)
         if form.is_valid():
             form.save()
+            send_mail(
+                'Спасибо за вашу заявку',
+                'Ваш заявка успешно получена. Мы ответим вам в ближайшее время.',
+                'your_email@example.com',  # Отправитель
+                [form.cleaned_data['email']],  # Получатель
+                fail_silently=False,
+            )
             return redirect('success_view')
     else:
         form = ApplicationForm()

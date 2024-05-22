@@ -7,7 +7,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
-    <link type="text/css" href="{% static 'shinka/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'shinka/css/styles.css' %}" rel="stylesheet" media="screen and (min-width: 1024px)"/>
+    <link type="text/css" href="{% static 'shinka/css/styles_tablet.css' %}" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link type="text/css" href="{% static 'shinka/css/styles_mobile.css' %}" rel="stylesheet" media="screen and (max-width: 767px)">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Подключаем стили для иконок -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -51,10 +54,11 @@
     </ul>
   </div>
   <div class="column">
-    <p>Мы в соц.сетях:</p>
+      <p>Мы в соц.сетях:</p>
       <img class="icon4" src="{% static 'shinka/img/телега.png' %}" alt="Телеграм">
       <img class="icon4" src="{% static 'shinka/img/вотсап.png' %}" alt="Вотс ап">
-    <p>Авито: ШИНСЕРВИС БТСК-ДОН 761ru</p>
+      <p>Авито: ШИНСЕРВИС БТСК-ДОН 761ru</p>
+      <p>Режим работы: с 9.00 - 22.00</p>
   </div>
   <div class="column">
     <p>Адрес:</p>

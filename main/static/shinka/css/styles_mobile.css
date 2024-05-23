@@ -73,6 +73,8 @@ body {
       padding-bottom: 10px;
     }
 
+
+
     .text {
       flex: 1; /* Занимает все доступное пространство по горизонтали */
     }
@@ -226,7 +228,8 @@ body {
           transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
         }
         .karta{
-          padding-bottom: 120px ;
+            top: -70px;
+            width:100%;
         }
 
           /* Общий стиль для контейнера */

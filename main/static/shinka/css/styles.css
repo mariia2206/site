@@ -278,7 +278,8 @@ body {
           transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
         }
         .karta{
-          padding-bottom: 120px ;
+          padding-bottom: 120px;
+          width:700px;
         }
 
           /* Общий стиль для контейнера */

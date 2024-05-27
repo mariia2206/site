@@ -26,7 +26,7 @@ class Action(models.Model):
         return self.author
 
 class Service(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.TextField()
     photo = models.ImageField(upload_to='services_photos/')
     full_description = models.TextField()
 
@@ -52,15 +52,26 @@ class Application(models.Model):
     def send_approval_email(self):
         if self.approved and not self.rejected:
             subject = "Ваша заявка одобрена"
-            message = "Здравствуйте, Ваша заявка на услугу была одобрена."
+            message = (
+                f"Здравствуйте, {self.name}.\n\n"
+                f"Ваша заявка на услугу '{self.service.name}' была одобрена.\n"
+                f"Дата записи: {self.appointment_date.strftime('%d-%m-%Y')}\n"
+                f"Время записи: {self.appointment_time}\n\n"
+                f"С уважением, ШинСервис Бтск-Дон."
+            )
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [self.email])
 
     def send_rejection_email(self):
         if self.rejected:
             subject = "Ваша заявка отклонена"
-            message = "Здравствуйте, Ваша заявка на услугу была отклонена."
+            message = (
+                f"Здравствуйте, {self.name}.\n\n"
+                f"Ваша заявка на услугу '{self.service.name}' была отклонена.\n"
+                f"Дата записи: {self.appointment_date.strftime('%d-%m-%Y')}\n"
+                f"Время записи: {self.appointment_time}\n\n"
+                f"С уважением, ШинСервис Бтск-Дон."
+            )
             send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [self.email])
-
 
 from django.db import models
 

@@ -104,9 +104,18 @@ body {
     /* Стили для раздела О нас */
     .about-section {
       display: flex; /* Располагаем элементы в строку */
+      justify-content:center;
       align-items: center; /* Выравниваем элементы по вертикали */
       padding: 50px 150px;
     }
+        /* Стили для раздела О нас */
+    .about-section1 {
+      display: flex; /* Располагаем элементы в строку */
+      align-items: center; /* Выравниваем элементы по вертикали */
+     justify-content:center;
+      padding: 50px 150px;
+    }
+
 
     .about-image {
       width: 500px; /* Максимальная ширина изображения */

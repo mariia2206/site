@@ -1,12 +1,22 @@
+<!-- success.html -->
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Спасибо</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Заявка отправлена</title>
+     <link type="text/css" href="{% static 'shinka/css/styles.css' %}" rel="stylesheet" media="screen and (min-width: 1024px)"/>
+    <link type="text/css" href="{% static 'shinka/css/styles_tablet.css' %}" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1023px)">
+    <link type="text/css" href="{% static 'shinka/css/styles_mobile.css' %}" rel="stylesheet" media="screen and (max-width: 767px)">
 </head>
 <body>
+<section class="success">
+    <div>
     <h1>Спасибо за ваш вопрос!</h1>
-    <p>Мы свяжемся с вами в ближайшее время (Проверяйте свой e-mail).</p>
+        <p>Мы свяжемся с вами в ближайшее время (Проверяйте свой e-mail).</p></div>
+</section>
 </body>
 </html>

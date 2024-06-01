@@ -8,5 +8,6 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),  # Путь для страницы контакты
     path('service/<int:id>/', views.service_detail_view, name='service_detail'),
     path('success/', views.success_view, name='success_view'),
+    path('personal.html/', views.privacy_policy, name='privacy_policy'),
     # Другие URL-шаблоны вашего проекта...
 ]

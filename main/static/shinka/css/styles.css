@@ -1,3 +1,5 @@
+@media (min-width: 1024px){
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -97,8 +99,7 @@ body {
     }
 
     .image {
-      max-width: 800px; /* Максимальная ширина картинки */
-
+      max-width: 700px; /* Максимальная ширина картинки */
     }
 
     /* Стили для раздела О нас */
@@ -106,27 +107,27 @@ body {
       display: flex; /* Располагаем элементы в строку */
       justify-content:center;
       align-items: center; /* Выравниваем элементы по вертикали */
-      padding: 50px 150px;
+      padding: 5% 10%;
     }
         /* Стили для раздела О нас */
     .about-section1 {
       display: flex; /* Располагаем элементы в строку */
       align-items: center; /* Выравниваем элементы по вертикали */
      justify-content:center;
-      padding: 50px 150px;
+      padding: 5% 10%;
     }
 
 
     .about-image {
-      width: 500px; /* Максимальная ширина изображения */
+      width: 400px; /* Максимальная ширина изображения */
     }
     .about-text{
       text-align: right;
-      padding-left: 200px;
+      padding-left: 10%;
     }
     .about-text1{
       text-align: left;
-      padding-right: 200px;
+      padding-right: 10%;
     }
     .about{
       padding-top: 50px;
@@ -141,7 +142,7 @@ body {
       .advantages-list {
         display: flex;
         flex-direction: column;
-        padding: 0 20px;
+        padding: 0 10px;
       }
       .advantages-item {
         display: flex;
@@ -156,7 +157,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 30px;
+        margin-right: 20px;
       }
       .icon {
         height: auto;
@@ -164,10 +165,10 @@ body {
         width: 40px ;
       }
       .photo_preim{
-        width: 500px;
+        width: 400px;
       }
       .preim_text{
-        width: 300px;
+        width: 270px;
       }
       .icon4{
         height: auto;
@@ -183,71 +184,64 @@ body {
           margin: 0 auto;
           overflow: hidden;
         }
-        .question-form {
-          max-width: 500px;
-          margin: 50px auto;
-          padding: 20px;
-          background-color: #252A46;
-          border-radius: 30px;
-        }
+       .question-form {
+  max-width: 500px; /* Максимальная ширина формы */
+  margin: 50px auto; /* Автоматическое центрирование формы */
+  padding: 20px;
+  background-color: #252A46;
+  border-radius: 30px;
+}
+
         .form-header {
           text-align: center;
-          font-size: 24px;
-          margin: 20px 0px;
           color: #fff;
         }
         .form-group {
-          margin-bottom: 20px;
-          margin-right: 70px;
-          margin-left: 60px;
+          margin-bottom: 10px;
+          margin-right: 30px;
+          margin-left: 30px;
         }
-        .form-group label {
-          display: block;
-          margin-bottom: 5px;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"]{  width: 100%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
-          height: 20px; /* Высота полей ввода */
-          padding: 10px; /* Отступы внутри поля ввода */
-          background-color: #D9D9D9; /* Цвет фона полей ввода */}
-        .form-group textarea {
-          width: 100%;
-          padding: 10px;
-          background-color: #D9D9D9;
-        }
-        .form-group textarea {
-          resize: vertical;
-        }
-        .form-checkbox {
-          display: flex;
-          align-items: center;
-          color: #D9D9D9;
-        }
-        .form-checkbox input[type="checkbox"] {
-          margin-right: 10px;
-        }
-        .form-submit {
-          text-align: center;
-        }
-        .form-submit button {
-          padding: 12px 40px;
-          margin-bottom: 20px;
-          font-size: 18px;
-          color:white;
-          background-color:#252A46;
-          border: 1px solid #fff;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
-        }
-        .form-submit button:hover {
-          background-color:#D9D9D9;
-          color: #000;
-        }
-        .sogl{font-size: 15px;}
-        .zad{font-size: 15px;}
 
+.footer {
+          background-color: #252A46;
+          color: #ffffff;
+          padding: 60px 150px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .column ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .column ul li  {
+          margin-bottom: 15px;
+        }
+        .column li a{
+          color: #fff;
+           text-decoration: none;}
+        .column img{
+          padding-right: 10px;
+        }
+        .button_strelka {
+          text-decoration: none;
+          background-color: #252A46; /* Белый цвет фона кнопки */
+          color: white; /* Синий цвет текста кнопки */
+          border: 1px solid #D9D9D9; /* Белая обводка кнопки */
+          padding: 10px 17px; /* Поля вокруг текста кнопки */
+          border-radius: 60px; /* Закругленные края кнопки */
+          font-size: 18px; /* Размер текста кнопки */
+          cursor: pointer; /* Изменение формы указателя при наведении на кнопку */
+          transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавное изменение цвета фона, текста и анимации выдвижения кнопки */
+    }
+
+
+        .button_strelka:hover{
+          background-color:#D9D9D9; /* Изменяем цвет фона при наведении */
+          color: black; /* Изменяем цвет текста при наведении */
+          transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+        }
         .footer {
           background-color: #252A46;
           color: #ffffff;
@@ -306,7 +300,20 @@ body {
       flex-direction: column;
       margin: 20px;
   }
+/* Общий стиль для контейнера */
+.about-us {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  overflow: auto; /* Добавляем это свойство */
+}
 
+/* Медиа-запрос для экранов, где все содержимое помещается */
+@media (min-height: 100vh) {
+  .about-us {
+    overflow: visible; /* Убираем полосу прокрутки, если все содержимое помещается */
+  }
+}
 
   /* Стиль для блока с текстом и изображением */
   .info {
@@ -372,9 +379,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Центрируем галерею по горизонтали */
-    margin: 50px 200px; /* Отступ сверху */
+    margin: 5% 10%; /* Отступ сверху */
 }
-
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 .photo .caption {
     position: absolute;
     bottom: 0;
@@ -566,7 +576,7 @@ body {
     display: flex; /* Используем Flexbox */
     align-items: center; /* Выравниваем элементы по вертикали */
     justify-content: flex-end; /* Выравниваем элементы по правому краю */
-    margin: 20px 200px;
+    margin: 2% 10%;
 }
 
 .right_usluga {
@@ -582,8 +592,8 @@ body {
 }
 
 .full_description2{
-
     text-align: right;
+    padding-left:20%;
 
 }
 .service-link {
@@ -592,90 +602,198 @@ body {
 }
 
 
- .usluga-form {
-          max-width: 500px;
-          margin: 50px auto;
-          padding: 20px;
-          background-color: #252A46;
-          border-radius: 30px;
-        }
-        .form-header {
-          text-align: center;
-          font-size: 24px;
-          margin: 20px 0px;
-          color: #fff;
-        }
 
-        .form-group label {
-          display: block;
-          margin-bottom: 5px;
-        }
+.usluga-form {
+  max-width: 500px; /* Максимальная ширина формы */
+  margin: 50px auto; /* Автоматическое центрирование формы */
+  padding: 20px;
+  background-color: #252A46;
+  border-radius: 30px;
+}
 
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"]{  width: 100%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
-          height: 20px; /* Высота полей ввода */
-          padding: 10px; /* Отступы внутри поля ввода */
-          background-color: #D9D9D9; /* Цвет фона полей ввода */}
-        .form-group textarea {
-          width: 100%;
-          padding: 10px;
-          background-color: #D9D9D9;
-        }
-        .form-group select{
-          width: 106%; /* Ширина полей ввода будет занимать 100% ширины контейнера */
-          height: 40px; /* Высота полей ввода */
-          background-color: #D9D9D9; /* Цвет фона полей ввода */
-          padding-left:10px;
-          color:grey;
-          }
-        .form-group input[type="date"],
-        .form-group input[type="time"]
-        {
-             background-color: #D9D9D9;
+.form-header {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    color: #fff;
+}
 
-        }
-        .form-group textarea {
-          resize: vertical;
-        }
-        .form-checkbox {
-          display: flex;
-          align-items: center;
-          color: #D9D9D9;
-        }
-        .form-checkbox input[type="checkbox"] {
-          margin-right: 10px;
-        }
-        .form-submit {
-          text-align: center;
-        }
-        .form-submit button {
-          padding: 12px 40px;
-          margin-bottom: 20px;
-          font-size: 18px;
-          color:white;
-          background-color:#252A46;
-          border: 1px solid #fff;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: background-color 0.3s, color 0.3s;
-        }
-        .form-submit button:hover {
-          background-color:#D9D9D9;
-          color: #000;
-        }
-        .sogl{font-size: 15px;}
-        .zad{font-size: 15px;}
+.form-group {
+    margin-bottom: 15px;
+}
 
-        .form-row {
-            display: flex;
-            justify-content:flex-start;
-            padding-right: 800px;
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea {
+    width: 100%; /* Занимает 100% ширины контейнера */
+    padding: 10px; /* Отступы внутри поля */
+    background-color: #D9D9D9; /* Цвет фона полей */
+    border: none;
+    box-sizing: border-box; /* Учитывает отступы и границы в общей ширине элемента */
+    color: #000000;
+    -webkit-appearance: none; /* Отключаем стандартное оформление в Webkit-браузерах */
+    -moz-appearance: none; /* Отключаем стандартное оформление в Firefox */
+    appearance: none; /* Отключаем стандартное оформление */
+}
 
-      .form-row .form-group {
-    flex: 1; /* Изменяем ширину, чтобы поля занимали одинаковое пространство */
-    margin-right: 10px; /* Добавляем небольшой отступ между полями */
+/* Специальные стили для select */
+.form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="black" stroke-width=".5" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px; /* Чтобы текст не перекрывал иконку */
+}
+
+/* Стили для плейсхолдеров в полях даты и времени */
+.form-group input[type="date"]::placeholder,
+.form-group input[type="time"]::placeholder {
+    color: #000000; /* Цвет плейсхолдера */
+}
+
+/* Кроссбраузерная поддержка плейсхолдеров */
+.form-group input[type="text"]::-webkit-input-placeholder,
+.form-group input[type="email"]::-webkit-input-placeholder,
+.form-group input[type="tel"]::-webkit-input-placeholder,
+.form-group input[type="date"]::-webkit-input-placeholder,
+.form-group input[type="time"]::-webkit-input-placeholder,
+.form-group textarea::-webkit-input-placeholder {
+    color: #000000;
+}
+
+.form-group input[type="text"]::-moz-placeholder,
+.form-group input[type="email"]::-moz-placeholder,
+.form-group input[type="tel"]::-moz-placeholder,
+.form-group input[type="date"]::-moz-placeholder,
+.form-group input[type="time"]::-moz-placeholder,
+.form-group textarea::-moz-placeholder {
+    color: #000000;
+}
+
+.form-group input[type="text"]:-ms-input-placeholder,
+.form-group input[type="email"]:-ms-input-placeholder,
+.form-group input[type="tel"]:-ms-input-placeholder,
+.form-group input[type="date"]:-ms-input-placeholder,
+.form-group input[type="time"]:-ms-input-placeholder,
+.form-group textarea:-ms-input-placeholder {
+    color: #000000;
+}
+
+.form-group input[type="text"]::-ms-input-placeholder,
+.form-group input[type="email"]::-ms-input-placeholder,
+.form-group input[type="tel"]::-ms-input-placeholder,
+.form-group input[type="date"]::-ms-input-placeholder,
+.form-group input[type="time"]::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder {
+    color: #000000;
+}
+
+/* Для полей даты и времени добавляем иконки */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    position: relative;
+}
+
+.form-group input[type="date"]::before,
+.form-group input[type="time"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #000000;
+}
+
+.form-group input[type="date"]:focus::before,
+.form-group input[type="time"]:focus::before {
+    display: none;
+}
+
+
+
+.form-group textarea {
+    resize: vertical;
+
+}
+
+/* Плейсхолдеры для полей даты и времени */
+.form-group input[type="date"]::before,
+.form-group input[type="time"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #000000;
+}
+
+/* Скрытие плейсхолдеров при фокусе */
+.form-group input[type="date"]:focus::before,
+.form-group input[type="time"]:focus::before {
+    display: none;
+}
+/* Дополнительные стили для поля даты */
+.form-group input[type="date"]::-webkit-inner-spin-button,
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+/* Дополнительные стили для поля даты */
+.form-group input[type="time"]::-webkit-inner-spin-button,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Специальные стили для textarea */
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    color: #D9D9D9;
+}
+
+.form-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.form-submit {
+    text-align: center;
+}
+
+.form-submit button {
+    font-size: 18px;
+    padding: 12px 30px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #252A46;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-submit button:hover {
+    background-color: #D9D9D9;
+    color: #000;
+    transform: translateY(-5px); /* Выдвигаем кнопку на 5px вверх при наведении */
+}
+
+.sogl {
+    font-size: 15px;
+}
+
+.zad {
+    font-size: 15px;
 }
 
 .avatar2 {
@@ -725,4 +843,18 @@ body {
 }
 .author2{
     color:white;
+}
+.success {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Занимаем всю высоту экрана */
+            text-align: center; /* Центрируем текст внутри div */
+}
+.politica{
+    margin: 10px 150px;
+}
+.persona{
+    color:white;
+}
 }

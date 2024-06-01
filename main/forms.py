@@ -1,5 +1,7 @@
 # forms.py
 from django import forms
+from django.utils.safestring import mark_safe
+
 from .models import Review
 from .models import Service
 from .models import Application
@@ -70,7 +72,7 @@ class ApplicationForm(forms.ModelForm):
             'appointment_date': '',
             'appointment_time': '',
             'comment': '',
-            'agreement': 'Я согласен на обработку персональных данных',
+            'agreement': mark_safe('Я согласен на обработку <a class="persona" href="/personal.html/" target="_blank">персональных данных</a>'),
         }
 
     # Функция для проверки почты
@@ -107,5 +109,5 @@ class QuestionForm(forms.ModelForm):
             'email': '',
             'phone': '',
             'question_text': '',
-            'agreement': 'Я согласен на обработку персональных данных',
+              'agreement': mark_safe('Я согласен на обработку <a class="persona" href="/personal.html/" target="_blank">персональных данных</a>'),
         }

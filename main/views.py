@@ -80,3 +80,6 @@ def contacts(request):
     else:
         form = QuestionForm()
     return render(request, 'main/contacts.html', {'form': form})
+
+def privacy_policy(request):
+    return render(request, 'main/personal.html')

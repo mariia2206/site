@@ -27,9 +27,10 @@
 <div class="services-container">
     {% for service in services %}
     <div class="service">
+        <a href="{% url 'service_detail' service.id %}">
         <img src="{{ service.photo.url }}" alt="{{ service.name }}" class="photo_uslug">
         <h3 class="name_uslug">
-            <a href="{% url 'service_detail' service.id %}" class="service-link">{{ service.name }}</a>
+            <a href="{% url 'service_detail' service.id %}" class="service-link">{{ service.name|linebreaksbr}}</a>
         </h3>
     </div>
     {% endfor %}

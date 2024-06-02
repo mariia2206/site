@@ -40,45 +40,73 @@
 {% endif %}
 
  <div id="booking_form" class="usluga-form">
-        <div class="form-header">Записаться на услугу</div>
-        <form method="post">
-            {% csrf_token %}
+    <div class="form-header">Записаться на услугу</div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.name }}
+            {% for error in form.name.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.phone }}
+            {% for error in form.phone.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.tire_size }}
+            {% for error in form.tire_size.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.service }}
+            {% for error in form.service.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-row">
             <div class="form-group">
-                {{ form.name }}
-            </div>
-            <div class="form-group">
-                {{ form.email }}
-            </div>
-            <div class="form-group">
-                 <input type="text" id="id_phone" name="phone" placeholder="Введите номер телефона" required>
-            </div>
+                {{ form.appointment_date }}
+                {% for error in form.appointment_date.errors %}
+                    <div class="error">{{ error }}</div>
+                {% endfor %}
 
-            <div class="form-group">
-                {{ form.tire_size }}
             </div>
             <div class="form-group">
-                {{ form.service }}
+                {{ form.appointment_time }}
+                {% for error in form.appointment_time.errors %}
+                     <div class="error error-white">{{ error }}</div>
+                {% endfor %}
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    {{ form.appointment_date }}
-                </div>
-                <div class="form-group">
-                    {{ form.appointment_time }}
-                </div>
-            </div>
-            <div class="form-group">
-                {{ form.comment }}
-            </div>
-            <div class="form-group form-checkbox">
-                {{ form.agreement }}
-                <label for="{{ form.agreement.id_for_label }}"><p class="sogl">{{ form.agreement.label }}</p></label>
-            </div>
-            <div class="form-submit">
-                <button type="submit">Отправить</button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="form-group">
+            {{ form.comment }}
+            {% for error in form.comment.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group form-checkbox">
+            {{ form.agreement }}
+            <label for="{{ form.agreement.id_for_label }}"><p class="sogl">{{ form.agreement.label }}</p></label>
+            {% for error in form.agreement.errors %}
+                <div class="error">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-submit">
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+
 
 <!-- Плагин для правильного форма ввода телефона  -->
 <script src="https://cdn.jsdelivr.net/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>

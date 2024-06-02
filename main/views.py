@@ -16,6 +16,7 @@ def service_detail_view(request, id):
 from django.shortcuts import render, redirect
 from .forms import ApplicationForm
 from .models import Service
+from django.contrib import messages
 
 def uslugi(request):
     services = Service.objects.all()

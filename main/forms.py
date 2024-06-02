@@ -1,7 +1,8 @@
 # forms.py
 from django import forms
 from django.utils.safestring import mark_safe
-
+from django.core.exceptions import ValidationError
+import datetime
 from .models import Review
 from .models import Service
 from .models import Application
@@ -44,10 +45,35 @@ class ApplicationForm(forms.ModelForm):
         ('R21', 'R21'),
         ('R22', 'R22'),
     ]
+    # Создаем список вариантов для времени
+    TIME_CHOICES = [
+        ('', 'Выберите время:'),
+        ('09:00', '09:00'),
+        ('09:40', '09:40'),
+        ('10:20', '10:20'),
+        ('11:00', '11:00'),
+        ('11:40', '11:40'),
+        ('12:20', '12:20'),
+        ('13:00', '13:00'),
+        ('13:40', '13:40'),
+        ('14:20', '14:20'),
+        ('15:00', '15:00'),
+        ('15:40', '15:40'),
+        ('16:20', '16:20'),
+        ('17:00', '17:00'),
+        ('17:40', '17:40'),
+        ('18:20', '18:20'),
+        ('19:00', '19:00'),
+        ('19:40', '19:40'),
+        ('20:20', '20:20'),
+        ('21:00', '21:00'),
+        ('21:40', '21:40'),
+    ]
 
     # Используем виджет Select для создания раскрывающегося списка
     tire_size = forms.ChoiceField(choices=TIRE_SIZE_CHOICES, label='Выберите размер шин:', initial='', widget=forms.Select(), required=True)
-
+    appointment_time = forms.ChoiceField(choices=TIME_CHOICES, label='Выберите время:', required=True,
+                                         widget=forms.Select(attrs={'placeholder': 'Выберите время'}))
 
     class Meta:
         model = Application
@@ -58,8 +84,8 @@ class ApplicationForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'placeholder': 'Введите номер телефона:', 'required': True}),
             'tire_size': forms.TextInput(attrs={'placeholder': 'Выберите размер шин:', 'required': True}),
             'service': forms.Select({'required': True}),
-            'appointment_date': forms.DateInput(attrs={'type': 'date', 'required': True}),
-            'appointment_time': forms.TextInput(attrs={'type': 'time', 'required': True}),
+            'appointment_date': forms.DateInput(attrs={'placeholder': 'Выберите дату:','type': 'date', 'required': True}),
+            'appointment_time': forms.Select(attrs={'placeholder': 'Выберите время:','required': True}),
             'comment': forms.Textarea(attrs={'placeholder': 'Комментарий', 'rows': 5}),
             'agreement': forms.CheckboxInput(attrs={'class': 'form-check-input', 'required': True}),
         }
@@ -72,8 +98,17 @@ class ApplicationForm(forms.ModelForm):
             'appointment_date': '',
             'appointment_time': '',
             'comment': '',
-            'agreement': mark_safe('Я согласен на обработку <a class="persona" href="/personal.html/" target="_blank">персональных данных</a>'),
+            'agreement': mark_safe('Я согласен(-на) на обработку персональных данных в соответствии с <a class="persona" href="/personal.html/" target="_blank">политикой конфиденциальности</a>'),
         }
+
+    def clean_appointment_time(self):
+        appointment_date = self.cleaned_data.get('appointment_date')
+        appointment_time = self.cleaned_data.get('appointment_time')
+        if appointment_date and appointment_time:
+            if Application.objects.filter(appointment_date=appointment_date, appointment_time=appointment_time,
+                                          approved=True).exists():
+                raise ValidationError("Это время уже занято.")
+        return appointment_time
 
     # Функция для проверки почты
     def clean_email(self):
@@ -109,5 +144,6 @@ class QuestionForm(forms.ModelForm):
             'email': '',
             'phone': '',
             'question_text': '',
-              'agreement': mark_safe('Я согласен на обработку <a class="persona" href="/personal.html/" target="_blank">персональных данных</a>'),
+            'agreement': mark_safe(
+                'Я согласен(-на) на обработку персональных данных в соответствии с <a class="persona" href="/personal.html/" target="_blank">политикой конфиденциальности</a>'),
         }

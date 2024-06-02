@@ -654,12 +654,12 @@ html, body {
     padding-right: 30px; /* Чтобы текст не перекрывал иконку */
 }
 
+
 /* Стили для плейсхолдеров в полях даты и времени */
 .form-group input[type="date"]::placeholder,
 .form-group input[type="time"]::placeholder {
     color: #000000; /* Цвет плейсхолдера */
 }
-
 /* Кроссбраузерная поддержка плейсхолдеров */
 .form-group input[type="text"]::-webkit-input-placeholder,
 .form-group input[type="email"]::-webkit-input-placeholder,
@@ -703,19 +703,6 @@ html, body {
     position: relative;
 }
 
-.form-group input[type="date"]::before,
-.form-group input[type="time"]::before {
-    content: attr(placeholder);
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #000000;
-}
-
-.form-group input[type="date"]:focus::before,
-.form-group input[type="time"]:focus::before {
-    display: none;
-}
 
 
 
@@ -724,32 +711,6 @@ html, body {
 
 }
 
-/* Плейсхолдеры для полей даты и времени */
-.form-group input[type="date"]::before,
-.form-group input[type="time"]::before {
-    content: attr(placeholder);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
-    color: #000000;
-}
-
-/* Скрытие плейсхолдеров при фокусе */
-.form-group input[type="date"]:focus::before,
-.form-group input[type="time"]:focus::before {
-    display: none;
-}
-/* Дополнительные стили для поля даты */
-.form-group input[type="date"]::-webkit-inner-spin-button,
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-/* Дополнительные стили для поля даты */
-.form-group input[type="time"]::-webkit-inner-spin-button,
-.form-group input[type="time"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
 
 /* Специальные стили для textarea */
 .form-group textarea {
@@ -851,10 +812,19 @@ html, body {
             height: 100vh; /* Занимаем всю высоту экрана */
             text-align: center; /* Центрируем текст внутри div */
 }
+.fiol{color:purple; text-decoration:underline;}
 .politica{
     margin: 10px 150px;
 }
 .persona{
     color:white;
 }
+.error {
+    color: white; /* текущий цвет ошибок */
+}
+
+.error-white {
+    color: white; /* цвет ошибок для занятости времени */
+}
+
 }

@@ -106,7 +106,7 @@ body {
     }
 
     .image {
-      max-width: 450px; /* Максимальная ширина картинки */
+      max-width: 550px; /* Максимальная ширина картинки */
 
     }
 
@@ -127,7 +127,7 @@ body {
     }
 
     .about-image {
-      width: 300px; /* Максимальная ширина изображения */
+      width: 350px; /* Максимальная ширина изображения */
     }
     .about-text{
       text-align: left;
@@ -168,7 +168,7 @@ body {
         width: 40px ;
       }
       .photo_preim{
-        width: 300px;
+        width: 280px;
       }
       .preim_text{
         width: 250px;
@@ -540,8 +540,8 @@ html, body {
 }
 /* Стили для изображения в каждой услуге */
 .photo_uslug2 {
-    width: 300px;
-    height: 200px;
+    width: 380px;
+    height: 280px;
 }
 
 .full_description2{

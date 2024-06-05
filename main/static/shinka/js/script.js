@@ -5,17 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var images = document.querySelectorAll('.gallery img');
     var closeBtn = document.getElementsByClassName("close")[0];
 
-    for (var i = 0; i < images.length; i++) {
-        images[i].addEventListener('click', function() {
+    images.forEach(image => {
+        image.addEventListener('click', function() {
             modal.style.display = "block";
             modalImg.src = this.src;
             modalCaption.innerHTML = this.nextElementSibling.innerHTML;
-            // Устанавливаем позицию подписи
-            modalCaption.style.bottom = "10px"; // Расположение подписи внизу
-            modalCaption.style.left = "50%"; // Положение по центру
-            modalCaption.style.transform = "translateX(-50%)"; // Сдвиг по горизонтали влево на 50%
+            modalCaption.style.bottom = "10px";
         });
-    }
+    });
 
     closeBtn.onclick = function() {
         modal.style.display = "none";
@@ -27,4 +24,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-

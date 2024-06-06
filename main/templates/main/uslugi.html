@@ -41,7 +41,7 @@
 
  <div id="booking_form" class="usluga-form">
     <div class="form-header">Записаться на услугу</div>
-    <form method="post"  action="">
+    <form id="service-form" method="post" action="{% url 'submit_form' %}" data-success-url="{% url 'success_view' %}">
         {% csrf_token %}
         <div class="form-group">
             {{ form.name }}
@@ -111,7 +111,7 @@
 <!-- Плагин для правильного форма ввода телефона  -->
 <script src="https://cdn.jsdelivr.net/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
  <!-- Подключение статического JavaScript файла -->
-<script src="{% static 'shinka/js/valid.js' %}"></script>
 <script src="{% static 'shinka/js/phone.js' %}"></script>
 <script src="{% static 'shinka/js/script_slider.js' %}"></script>
+<script src="{% static 'shinka/js/valid.js' %}"></script>
 {% endblock %}

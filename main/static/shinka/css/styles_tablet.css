@@ -554,9 +554,6 @@ html, body {
     color: black; /* Изменяем цвет текста на черный */
 }
 
-
-
-
   .usluga-form {
     margin: 50px 200px;
     padding: 10px;
@@ -611,6 +608,7 @@ html, body {
 .form-group input[type="date"]::placeholder,
 .form-group input[type="time"]::placeholder {
     color: #000000; /* Цвет плейсхолдера */
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 /* Кроссбраузерная поддержка плейсхолдеров */
@@ -621,6 +619,7 @@ html, body {
 .form-group input[type="time"]::-webkit-input-placeholder,
 .form-group textarea::-webkit-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]::-moz-placeholder,
@@ -630,6 +629,7 @@ html, body {
 .form-group input[type="time"]::-moz-placeholder,
 .form-group textarea::-moz-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]:-ms-input-placeholder,
@@ -639,6 +639,7 @@ html, body {
 .form-group input[type="time"]:-ms-input-placeholder,
 .form-group textarea:-ms-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]::-ms-input-placeholder,
@@ -648,6 +649,24 @@ html, body {
 .form-group input[type="time"]::-ms-input-placeholder,
 .form-group textarea::-ms-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
+}
+
+/* Для полей даты и времени добавляем иконки */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    position: relative;
+}
+ .form-group input[type="date"]:before{
+    content:attr(placeholder);
+    }
+ .form-group input[type="date"].new:before {content: none;}
+.error {
+    color: white; /* текущий цвет ошибок */
+}
+
+.error-white {
+    color: white; /* цвет ошибок для занятости времени */
 }
 
 
@@ -740,6 +759,12 @@ html, body {
     padding: 20px;
     text-align: center; /* Выравнивание текста по центру */
 }
+.testimonial-slide img.avatar2 {
+    width: 550px; /* Задаем фиксированную ширину */
+    height: 350px; /* Задаем фиксированную высоту */
+    object-fit: cover; /* Обеспечиваем сохранение соотношения сторон и обрезаем изображение по масштабу */
+}
+
 .author2{
     color:white;
 }

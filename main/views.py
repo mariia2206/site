@@ -14,54 +14,41 @@ def service_detail_view(request, id):
     return render(request, 'main/service_detail.html', {'service': service})
 
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from .models import Service, Action
 from .forms import ApplicationForm
-from .models import Service
-from django.contrib import messages
-from .models import Application
-from django.shortcuts import render, redirect
-
 
 def uslugi(request):
     services = Service.objects.all()
     actions = Action.objects.all()
+    form = ApplicationForm()
+    return render(request, 'main/uslugi.html', {'actions': actions, 'services': services, 'form': form})
 
+def submit_form(request):
     if request.method == 'POST':
         form = ApplicationForm(request.POST)
         if form.is_valid():
-            appointment_date = form.cleaned_data.get('appointment_date')
-            appointment_time = form.cleaned_data.get('appointment_time')
-
-            if Application.objects.filter(appointment_date=appointment_date, appointment_time=appointment_time,
-                                          approved=True).exists():
-                # Если время занято, оставляем пользователя на той же странице с формой и сообщением об ошибке
-                form.add_error('appointment_time', 'Это время уже занято. Пожалуйста, выберите другое время.')
-                return render(request, 'main/uslugi.html', {
-                    'actions': actions,
-                    'services': services,
-                    'form': form,
-                    'scroll_to_form': True
-                })
-
-            # Если время доступно, сохраняем заявку и отображаем страницу успеха
             form.save()
             send_mail(
                 'Спасибо за вашу заявку',
-                'Ваша заявка успешно получена. Мы ответим вам в ближайшее время.',
+                'Ваш заявка успешно получена. Мы ответим вам в ближайшее время.',
                 'your_email@example.com',  # Отправитель
                 [form.cleaned_data['email']],  # Получатель
                 fail_silently=False,
             )
-            return redirect('success_view')
-    else:
-        form = ApplicationForm()
-
-    return render(request, 'main/uslugi.html',
-                  {'actions': actions, 'services': services, 'form': form, 'scroll_to_form': False})
-
-
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': True})
+            else:
+                return redirect('success_view')
+        else:
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'errors': form.errors})
+    return redirect('uslugi')
 
 def success_view(request):
     return render(request, 'main/success.html')
+
 
 
 from django.shortcuts import render

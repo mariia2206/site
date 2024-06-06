@@ -686,7 +686,9 @@ html, body {
 .form-group input[type="date"]::placeholder,
 .form-group input[type="time"]::placeholder {
     color: #000000; /* Цвет плейсхолдера */
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
+
 /* Кроссбраузерная поддержка плейсхолдеров */
 .form-group input[type="text"]::-webkit-input-placeholder,
 .form-group input[type="email"]::-webkit-input-placeholder,
@@ -695,6 +697,7 @@ html, body {
 .form-group input[type="time"]::-webkit-input-placeholder,
 .form-group textarea::-webkit-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]::-moz-placeholder,
@@ -704,6 +707,7 @@ html, body {
 .form-group input[type="time"]::-moz-placeholder,
 .form-group textarea::-moz-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]:-ms-input-placeholder,
@@ -713,6 +717,7 @@ html, body {
 .form-group input[type="time"]:-ms-input-placeholder,
 .form-group textarea:-ms-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 .form-group input[type="text"]::-ms-input-placeholder,
@@ -722,6 +727,7 @@ html, body {
 .form-group input[type="time"]::-ms-input-placeholder,
 .form-group textarea::-ms-input-placeholder {
     color: #000000;
+    z-index: 1; /* Устанавливаем поверх поля ввода */
 }
 
 /* Для полей даты и времени добавляем иконки */
@@ -729,6 +735,19 @@ html, body {
 .form-group input[type="time"] {
     position: relative;
 }
+ .form-group input[type="date"]:before{
+    content:attr(placeholder);
+    }
+ .form-group input[type="date"].new:before {content: none;}
+.error {
+    color: white; /* текущий цвет ошибок */
+}
+
+.error-white {
+    color: white; /* цвет ошибок для занятости времени */
+}
+
+
 
 .form-group textarea {
     resize: vertical;
